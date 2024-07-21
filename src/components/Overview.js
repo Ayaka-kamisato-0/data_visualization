@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import ReactEcharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 import { store } from '../store';
+
+var key;
 const data = [
     [
         [1, 1, "University of Oxford", "United Kingdom"],
@@ -1222,7 +1224,8 @@ const data = [
         [201, 201, "Ulsan National Institute of Science and Technology (UNIST)", "rank1234"]
     ]
 ]
-function Overview({ selectedState, selectedXValue }) {
+export default function Overview({ selectedState, selectedXValue }) {
+    const [selectedValue, setSelectedValue] = useState([]);
     useEffect(() => {
         var myChart = echarts.init(document.getElementById('chart'));
 
@@ -1498,36 +1501,47 @@ function Overview({ selectedState, selectedXValue }) {
             ]
 
         };
-        myChart.setOption(option_0);
-
+        // myChart.setOption(option_0);
+        myChart.on('legendselectchanged', function (params) {
+            console.log('当前选择的图例项:', params.name);
+            console.log('当前选择的状态:', params.selected);
+            key = Object.values(params.selected);
+            console.log('values:', key);
+            setSelectedValue(key);
+        });
         const updateChart = (chart, value, type) => {
-            var highlightData = [];
 
+            var highlightData = [];
+            myChart.setOption(option_0);
             if (type === 'xValue') {
+                console.log('selectedValue:', selectedValue);
                 for (var seriesIndex = 0; seriesIndex < data.length; seriesIndex++) {
                     for (var i = 0; i < data[seriesIndex].length; i++) {
                         if (data[seriesIndex][i][0] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
                             console.log('Highlight Point:', data[seriesIndex][i]);
-
-                            highlightData.push({
-                                seriesIndex: seriesIndex,
-                                dataIndex: i
-                            });
+                            if (selectedValue[seriesIndex] == true) {
+                                highlightData.push({
+                                    seriesIndex: seriesIndex,
+                                    dataIndex: i
+                                });
+                            }
                         }
                     }
                 }
             } else if (type === 'state') {
+
                 for (var seriesIndex = 0; seriesIndex < data.length; seriesIndex++) {
                     for (var i = 0; i < data[seriesIndex].length; i++) {
                         if (data[0][i][3] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
                             console.log('Highlight state:', data[seriesIndex][i]);
-
-                            highlightData.push({
-                                seriesIndex: seriesIndex,
-                                dataIndex: i
-                            });
+                            if (selectedValue[seriesIndex] == true) {
+                                highlightData.push({
+                                    seriesIndex: seriesIndex,
+                                    dataIndex: i
+                                });
+                            }
                         }
                     }
                 }
@@ -1552,22 +1566,22 @@ function Overview({ selectedState, selectedXValue }) {
                 });
             }
 
-            var highlight_series_idx = []
-            var highlight_data_idx = []
-            for (let i = 0; i < highlightData.length; i++) {
-                highlight_series_idx.push(highlightData[i].seriesIndex)
-                highlight_data_idx.push(highlightData[i].dataIndex)
-            }
+            // var highlight_series_idx = []
+            // var highlight_data_idx = []
+            // for (let i = 0; i < highlightData.length; i++) {
+            //     highlight_series_idx.push(highlightData[i].seriesIndex)
+            //     highlight_data_idx.push(highlightData[i].dataIndex)
+            // }
 
-            // 高亮选中的数据点
-            for (let i = 0; i < highlightData.length; i++) {
-                myChart.dispatchAction({
-                    type: 'highlight',
-                    seriesIndex: highlight_series_idx,
-                    dataIndex: highlight_data_idx
+            // // 高亮选中的数据点
+            // for (let i = 0; i < highlightData.length; i++) {
+            //     myChart.dispatchAction({
+            //         type: 'highlight',
+            //         seriesIndex: highlight_series_idx,
+            //         dataIndex: highlight_data_idx
 
-                });
-            }
+            //     });
+            // }
         };
         if (selectedXValue !== null) {
             updateChart(myChart, selectedXValue, 'xValue');
@@ -1596,4 +1610,3 @@ function Overview({ selectedState, selectedXValue }) {
     </div>
 
 }
-export default Overview;
