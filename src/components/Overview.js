@@ -1225,7 +1225,7 @@ const data = [
     ]
 ]
 export default function Overview({ selectedState, selectedXValue }) {
-    const [selectedValue, setSelectedValue] = useState([]);
+    const [selectedValue, setSelectedValue] = useState([true, true, true, true, true]);
     useEffect(() => {
         var myChart = echarts.init(document.getElementById('chart'));
 
