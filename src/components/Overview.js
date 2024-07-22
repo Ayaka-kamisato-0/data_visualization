@@ -1224,8 +1224,8 @@ const data = [
         [201, 201, "Ulsan National Institute of Science and Technology (UNIST)", "rank1234"]
     ]
 ]
-export default function Overview({ selectedState, selectedXValue }) {
-    const [selectedValue, setSelectedValue] = useState([true, true, true, true, true]);
+export default function Overview({ selectedState, selectedXValue, selectedValue, setSelectedValue }) {
+
     useEffect(() => {
         var myChart = echarts.init(document.getElementById('chart'));
 
@@ -1238,16 +1238,16 @@ export default function Overview({ selectedState, selectedXValue }) {
                 colorStops: [
                     {
                         offset: 0,
-                        color: '#f7f8fa'
+                        color: 'white'
                     },
                     {
                         offset: 1,
-                        color: '#cdd0d5'
+                        color: 'white'
                     }
                 ]
             },
             title: {
-                text: 'Ranking Variation after diminishing dimensions',
+                text: '',
                 left: '5%',
                 top: '3%'
             },
@@ -1517,7 +1517,7 @@ export default function Overview({ selectedState, selectedXValue }) {
                 console.log('selectedValue:', selectedValue);
                 for (var seriesIndex = 0; seriesIndex < data.length; seriesIndex++) {
                     for (var i = 0; i < data[seriesIndex].length; i++) {
-                        if (data[seriesIndex][i][0] === value) {
+                        if (data[seriesIndex][i][2] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
                             console.log('Highlight Point:', data[seriesIndex][i]);
                             if (selectedValue[seriesIndex] == true) {
@@ -1602,10 +1602,13 @@ export default function Overview({ selectedState, selectedXValue }) {
         height: '400px',
         backgroundColor: 'white'
     };
-    return <div>
+
+    return <div id="container">
         <br />
         <br />
-        <p>Overview:Ranking Variation after diminishing dimensions</p>
+        <p id="title">
+            Overview: Ranking Variation after diminishing dimensions
+        </p>
         <div id="chart" style={{ width: '600px', height: '400px' }}></div>
     </div>
 
