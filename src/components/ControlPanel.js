@@ -39,7 +39,7 @@ function ControlPanel({ selectedState, selectedXValue, onStateChange, onXValueCh
             <Select.Option value="Switzerland">Switzerland</Select.Option>
             <Select.Option value="Germany">Germany</Select.Option>
             <Select.Option value="France">France</Select.Option>
-            <Select.Option value="HongKong">China HongKong</Select.Option>
+            <Select.Option value="Hong Kong">China HongKong</Select.Option>
             <Select.Option value="Australia">Australia</Select.Option>
             <Select.Option value="Russia">Russia</Select.Option>
             <Select.Option value="Belgium">Belgium</Select.Option>

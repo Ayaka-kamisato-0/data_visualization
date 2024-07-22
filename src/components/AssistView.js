@@ -7,7 +7,7 @@ export default function AssistView({ selectedState }) {
 
     const option = {
       legend: {
-        data: ['China', 'HongKong', 'Japan', 'South Korea', 'United Kingdom', 'United States', 'Australia'],
+        data: ['China', 'Hong Kong', 'Japan', 'South Korea', 'United Kingdom', 'United States', 'Australia'],
         left: 'left',
         textStyle: {
           fontSize: 10,
@@ -44,7 +44,7 @@ export default function AssistView({ selectedState }) {
             },
             {
               value: [55.3, 60.5, 94.5, 95.7, 96.2],
-              name: 'HongKong',
+              name: 'Hong Kong',
               emphasis: {
                 lineStyle: {
                   width: 4
