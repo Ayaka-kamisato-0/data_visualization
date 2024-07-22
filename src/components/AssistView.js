@@ -38,7 +38,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -50,7 +50,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -62,7 +62,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -74,7 +74,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -86,7 +86,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -98,7 +98,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
@@ -110,7 +110,7 @@ export default function AssistView({ selectedState }) {
                   width: 4
                 },
                 areaStyle: {
-                  opacity: 0.8
+                  opacity: 0.3
                 }
               }
             },
