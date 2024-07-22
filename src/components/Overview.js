@@ -1517,7 +1517,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                 console.log('selectedValue:', selectedValue);
                 for (var seriesIndex = 0; seriesIndex < data.length; seriesIndex++) {
                     for (var i = 0; i < data[seriesIndex].length; i++) {
-                        if (data[seriesIndex][i][0] === value) {
+                        if (data[seriesIndex][i][2] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
                             console.log('Highlight Point:', data[seriesIndex][i]);
                             if (selectedValue[seriesIndex] == true) {
