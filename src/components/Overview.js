@@ -1268,6 +1268,15 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     show: false
                 }
             },
+            tooltip: {
+                trigger: 'item',
+                axisPointer: {
+                    type: 'cross',
+                    crossStyle: {
+                        color: '#999'
+                    }
+                }
+            },
             yAxis: {
                 splitLine: {
                     show: false
@@ -1279,7 +1288,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank1',
                     data: data[0],
                     type: 'scatter',
-                    symbolSize: 3,
+                    symbolSize: 5,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1324,7 +1333,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank2',
                     data: data[1],
                     type: 'scatter',
-                    symbolSize: 3,
+                    symbolSize: 5,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1369,7 +1378,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank3',
                     data: data[2],
                     type: 'scatter',
-                    symbolSize: 3,
+                    symbolSize: 5,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1413,7 +1422,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank4',
                     data: data[3],
                     type: 'scatter',
-                    symbolSize: 3,
+                    symbolSize: 5,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1457,7 +1466,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank5',
                     data: data[4],
                     type: 'scatter',
-                    symbolSize: 3,
+                    symbolSize: 5,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1503,10 +1512,10 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
         };
         // myChart.setOption(option_0);
         myChart.on('legendselectchanged', function (params) {
-            console.log('当前选择的图例项:', params.name);
-            console.log('当前选择的状态:', params.selected);
+            // console.log('当前选择的图例项:', params.name);
+            // console.log('当前选择的状态:', params.selected);
             key = Object.values(params.selected);
-            console.log('values:', key);
+            // console.log('values:', key);
             setSelectedValue(key);
         });
         const updateChart = (chart, value, type) => {
@@ -1514,12 +1523,12 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
             var highlightData = [];
             myChart.setOption(option_0);
             if (type === 'xValue') {
-                console.log('selectedValue:', selectedValue);
+                // console.log('selectedValue:', selectedValue);
                 for (var seriesIndex = 0; seriesIndex < data.length; seriesIndex++) {
                     for (var i = 0; i < data[seriesIndex].length; i++) {
                         if (data[seriesIndex][i][2] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
-                            console.log('Highlight Point:', data[seriesIndex][i]);
+                            // console.log('Highlight Point:', data[seriesIndex][i]);
                             if (selectedValue[seriesIndex] == true) {
                                 highlightData.push({
                                     seriesIndex: seriesIndex,
@@ -1535,7 +1544,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     for (var i = 0; i < data[seriesIndex].length; i++) {
                         if (data[0][i][3] === value) {
                             // 打印调试信息，确保我们正确地找到数据点
-                            console.log('Highlight state:', data[seriesIndex][i]);
+                            // console.log('Highlight state:', data[seriesIndex][i]);
                             if (selectedValue[seriesIndex] == true) {
                                 highlightData.push({
                                     seriesIndex: seriesIndex,
@@ -1547,7 +1556,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                 }
             }
 
-            console.log('Highlight Data:', highlightData);
+            // console.log('Highlight Data:', highlightData);
 
             var highlight_series_idx = []
             var highlight_data_idx = []
@@ -1566,22 +1575,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                 });
             }
 
-            // var highlight_series_idx = []
-            // var highlight_data_idx = []
-            // for (let i = 0; i < highlightData.length; i++) {
-            //     highlight_series_idx.push(highlightData[i].seriesIndex)
-            //     highlight_data_idx.push(highlightData[i].dataIndex)
-            // }
 
-            // // 高亮选中的数据点
-            // for (let i = 0; i < highlightData.length; i++) {
-            //     myChart.dispatchAction({
-            //         type: 'highlight',
-            //         seriesIndex: highlight_series_idx,
-            //         dataIndex: highlight_data_idx
-
-            //     });
-            // }
         };
         if (selectedXValue !== null) {
             updateChart(myChart, selectedXValue, 'xValue');

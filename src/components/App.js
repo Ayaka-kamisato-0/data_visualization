@@ -33,7 +33,7 @@ function App() {
       <div className='overview'>
         <Overview selectedState={selectedState} selectedXValue={selectedXValue}
           selectedValue={selectedValue} setSelectedValue={setSelectedValue} />
-        <DetailView />
+        <DetailView selectedXValue={selectedXValue} />
       </div>
       <div className='otherview'>
         <div className='assistView'><AssistView /></div>
