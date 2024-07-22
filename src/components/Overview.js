@@ -1288,7 +1288,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank1',
                     data: data[0],
                     type: 'scatter',
-                    symbolSize: 5,
+                    symbolSize: 1,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1333,7 +1333,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank2',
                     data: data[1],
                     type: 'scatter',
-                    symbolSize: 5,
+                    symbolSize: 3,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1378,7 +1378,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank3',
                     data: data[2],
                     type: 'scatter',
-                    symbolSize: 5,
+                    symbolSize: 3,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1422,7 +1422,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank4',
                     data: data[3],
                     type: 'scatter',
-                    symbolSize: 5,
+                    symbolSize: 3,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1466,7 +1466,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank5',
                     data: data[4],
                     type: 'scatter',
-                    symbolSize: 5,
+                    symbolSize: 3,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
@@ -1603,7 +1603,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
         <p id="title">
             Overview: Ranking Variation after diminishing dimensions
         </p>
-        <div id="chart" style={{ width: '600px', height: '400px' }}></div>
+        <div id="chart" style={{ width: '600px', height: '300px' }}></div>
     </div>
 
 }

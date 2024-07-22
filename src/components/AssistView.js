@@ -144,8 +144,8 @@ export default function AssistView({ selectedState }) {
   }, [selectedState]);
 
   const divStyle_As = {
-    height: '500px',
-    width: '700px'
+    height: '400px',
+    width: '600px'
   };
 
   return (
@@ -155,7 +155,7 @@ export default function AssistView({ selectedState }) {
       <br />
       <div>AssistView</div>
       <br />
-      <div id="chart_2" style={{ height: '500px', width: '700px' }}></div>
+      <div id="chart_2" style={{ height: '400px', width: '400px' }}></div>
     </div>
   );
 }

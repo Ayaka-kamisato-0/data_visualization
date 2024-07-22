@@ -14,11 +14,20 @@
 .overview{
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 50px;
 }
 .otherview{
-  height: 50%;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+}
+.relativity{
+  position: absolute;
+  padding: 0px;
+  text-align: center;
+  left:600px;
+  top:440px;
+}
+.assistView2{
+  position: absolute;
+  left:1100px;
+  top:400px;
 }

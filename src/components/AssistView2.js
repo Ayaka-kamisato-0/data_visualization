@@ -7,7 +7,7 @@ function AssistView2() {
     const {state, dispatch} = useContext(store);
 
     const getOption = () => {
-        const colors = ['#5470C6', '#91CC75', '#EE6666'];
+        const colors = ['#5470C6', 'brown', 'green','yellow','purple'];
         return {
   color: colors,
   tooltip: {
@@ -27,7 +27,7 @@ function AssistView2() {
     }
   },
   legend: {
-    data: ['Evaporation', 'Precipitation', 'Temperature']
+    data: ['ranking(Avg)', 'teaching','research','citations','industry income','international outlook']
   },
   xAxis: [
     {
@@ -36,13 +36,13 @@ function AssistView2() {
         alignWithLabel: true
       },
       // prettier-ignore
-      data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      data: ['2018','2019','2020','2021','2022','2023','2024']
     }
   ],
   yAxis: [
     {
       type: 'value',
-      name: 'Evaporation',
+      name: 'ranking(Avg)',
       position: 'right',
       alignTicks: true,
       axisLine: {
@@ -52,15 +52,15 @@ function AssistView2() {
         }
       },
       axisLabel: {
-        formatter: '{value} ml'
+        formatter: '{value} '
       }
     },
     {
       type: 'value',
-      name: 'Precipitation',
-      position: 'right',
+      name: 'score',
+      position: 'left',
       alignTicks: true,
-      offset: 80,
+      offset: 30,
       axisLine: {
         show: true,
         lineStyle: {
@@ -68,52 +68,51 @@ function AssistView2() {
         }
       },
       axisLabel: {
-        formatter: '{value} ml'
+        formatter: '{value} '
       }
     },
-    {
-      type: 'value',
-      name: '温度',
-      position: 'left',
-      alignTicks: true,
-      axisLine: {
-        show: true,
-        lineStyle: {
-          color: colors[2]
-        }
-      },
-      axisLabel: {
-        formatter: '{value} °C'
-      }
-    }
   ],
   series: [
     {
-      name: 'Evaporation',
+      name: 'rank',
       type: 'bar',
+      yAxisIndex:0,
       data: [
-        2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3
+        119.9,96.3,92.0,72.1,63.4,53.1,42.6
       ]
     },
     {
-      name: 'Precipitation',
-      type: 'bar',
-      yAxisIndex: 1,
-      data: [
-        2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
-      ]
-    },
-    {
-      name: 'Temperature',
-      type: 'line',
-      yAxisIndex: 2,
-      data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-    }
+      name:'teaching',
+      type:'line',
+      yAxisIndex:1,
+      data:[62.2,69.5,68.1,69.4,70.9,74.3,78.9]
+      },{
+        name:'research',
+        type:'line',
+        yAxisIndex:1,
+        data:[65.4,65.3,68.3,71.7,73.8,78.7,79.5]
+        },{
+          name:'citations',
+          type:'line',
+          yAxisIndex:1,
+          data:[63.1,66.2,65.8,68.7,73.2,74.1,84.5]
+          },{
+            name:'industry income',
+            type:'line',
+            yAxisIndex:1,
+            data:[84.4,78.6,87.1,90.0,88.7,89.4,98.0]
+            },{
+              name:'international outlook',
+              type:'line',
+              yAxisIndex:1,
+              data:[39.0,48.1,50.4,52.3,52.0,48.8,58.8]
+              }
   ]
 };}
 const divStyle_As2={
-    height:'500px',
-    width:'900px'
+    height:'300px',
+    width:'600px',
+    position:'left'
 }
     return <div style={divStyle_As2}>
         <br/>

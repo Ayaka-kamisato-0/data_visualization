@@ -1,19 +1,32 @@
 import React, { useContext } from 'react';
 import ReactEcharts from 'echarts-for-react';
-
 import { store } from '../store';
+import citations from './assets/citations.png'
+import research from './assets/research.png'
+import teaching from './assets/teaching.png'
+import IndustryIncome from './assets/IndustryIncome.png'
+import InternationalOutlook from './assets/InternationalOutlook.png'
 
-function Relativity() {
-const divStyle_As2={
-    height:'200px',
-    width:'200px'
+function Relativity({ selectedYValue }) {
+let val=research;
+if(selectedYValue==='teaching'){
+    val=teaching;
 }
-    return <div style={divStyle_As2}>
-        <br/>
-        <br/>
+if(selectedYValue==='citations'){
+    val=citations;
+}
+if(selectedYValue==='IndustryIncome'){
+    val=IndustryIncome;
+}
+if(selectedYValue==='InternationalOutlook'){
+    val=InternationalOutlook;
+}
+    return <div>
         <p>Picture</p>
+        <img src={val} height='400px' width='500px' alt='picture'/>
     </div>
 
 }
+
 
 export default Relativity;

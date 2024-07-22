@@ -8,12 +8,12 @@ import DetailView from './DetailView';
 import '../css/App.css'
 import AssistView2 from './AssistView2';
 import Relativity from './Relativity'
-
 // App组件
 function App() {
+  
   const [selectedState, setSelectedState] = useState('');
   const [selectedXValue, setSelectedXValue] = useState(0);
-
+  const [selectedYValue, setSelectedYValue] = useState(0);
   const handleStateChange = (value) => {
     setSelectedState(value);
   };
@@ -22,12 +22,16 @@ function App() {
     const selectedValue = (value);
     setSelectedXValue(selectedValue);
   };
+  const handleYValueChange = (value) => {
+    const selectedValue = (value);
+    setSelectedYValue(selectedValue);
+  };
   const [selectedValue, setSelectedValue] = useState([true, true, true, true, true]);
 
   return <div className='root'>
     <div className='controlPanel'>
-      <ControlPanel selectedState={selectedState} selectedXValue={selectedXValue}
-        onStateChange={handleStateChange} onXValueChange={handleXValueChange} />
+      <ControlPanel selectedState={selectedState} selectedXValue={selectedXValue} selectedYValue={selectedYValue}
+        onStateChange={handleStateChange} onXValueChange={handleXValueChange} onYValueChange={handleYValueChange}/>
     </div>
     <div className='mainPanel'>
       <div className='overview'>
@@ -36,8 +40,9 @@ function App() {
         <DetailView selectedXValue={selectedXValue} />
       </div>
       <div className='otherview'>
+        
         <div className='assistView' ><AssistView selectedState={selectedState} /></div>
-        <div className='relativity'><Relativity /></div>
+        <div className='relativity'><Relativity selectedYValue={selectedYValue} /></div>
         <div className='assistView2'><AssistView2 /></div>
       </div>
     </div>

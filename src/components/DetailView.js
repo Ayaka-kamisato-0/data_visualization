@@ -341,7 +341,7 @@ export default function DetailView({ selectedXValue }) {
   }, [selectedXValue]);
   const divStyle_De = {
     width: '800px',
-    height: '400px',
+    height: '200px',
     backgroundColor: 'white'
   }
   return <div style={divStyle_De}>
@@ -350,6 +350,6 @@ export default function DetailView({ selectedXValue }) {
     <br></br>
     <div>DetailView</div>
     <br></br>
-    <div id="chart_1" style={{ width: '600px', height: '400px' }}></div>
+    <div id="chart_1" style={{ width: '600px', height: '285px' }}></div>
   </div>
 }

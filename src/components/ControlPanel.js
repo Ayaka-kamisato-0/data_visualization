@@ -4,7 +4,13 @@ import { store } from '../store';
 import '../css/ControlPanel.css'
 import Button_Ant, { Button } from './button'
 
-function ControlPanel({ selectedState, selectedXValue, onStateChange, onXValueChange }) {
+function onSelectChange(val){
+    return <>
+    <image src={val+'.png'}></image>
+        </>
+}
+
+function ControlPanel({ selectedState, selectedXValue,selectedYValue, onStateChange, onXValueChange,onYValueChange }) {
     const { state, dispatch } = useContext(store);
 
     const onChange = (value) => {
@@ -50,7 +56,7 @@ function ControlPanel({ selectedState, selectedXValue, onStateChange, onXValueCh
         <br></br>
 
         <p>Search by University</p>
-        <Select onChange={onXValueChange} defaultValue="">
+        <Select onChange={onXValueChange} defaultValue="University">
             <Select.Option value="University of Oxford">University of Oxford</Select.Option>
             <Select.Option value="Stanford University">Stanford University</Select.Option>
             <Select.Option value="Massachusetts Institute of Technology">Massachusetts Institute of Technology</Select.Option>
@@ -253,26 +259,23 @@ function ControlPanel({ selectedState, selectedXValue, onStateChange, onXValueCh
             <Select.Option value="Queensland University of Technology">Queensland University of Technology</Select.Option>
             <Select.Option value="Ulsan National Institute of Science and Technology (UNIST)">Ulsan National Institute of Science and Technology (UNIST)</Select.Option>
         </Select>
-
         <br></br>
         <br></br>
-
         <br></br>
-        <div class='button'>
-            <button style={style_button}>research             </button>
-            <br></br>
-            <br></br>
-            <button style={style_button}>teaching             </button>
-            <br></br>
-            <br></br>
-            <button style={style_button}>cittations           </button>
-            <br></br>
-            <br></br>
-            <button style={style_button}>industry_income      </button>
-            <br></br>
-            <br></br>
-            <button style={style_button}>international_outlook</button>
-        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <p>Group Analysis</p>
+        <Select onChange={onYValueChange} defaultValue="teaching">
+            <Select.Option value="teaching">teaching</Select.Option>
+            <Select.Option value="research">research</Select.Option>
+            <Select.Option value="citations">citations</Select.Option>
+            <Select.Option value="IndustryIncome">industry income</Select.Option>
+            <Select.Option value="InternationalOutlook">international outlook</Select.Option>
+        </Select>
+        <br></br>
+        <br></br>
+        <br></br>
     </div>
 }
 
