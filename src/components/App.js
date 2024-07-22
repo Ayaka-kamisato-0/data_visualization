@@ -23,6 +23,8 @@ function App() {
     const selectedValue = parseInt(event.target.value, 10);
     setSelectedXValue(selectedValue);
   };
+  const [selectedValue, setSelectedValue] = useState([true, true, true, true, true]);
+
   return <div className='root'>
     <div className='controlPanel'>
       <ControlPanel selectedState={selectedState} selectedXValue={selectedXValue}
@@ -30,7 +32,8 @@ function App() {
     </div>
     <div className='mainPanel'>
       <div className='overview'>
-        <Overview selectedState={selectedState} selectedXValue={selectedXValue} />
+        <Overview selectedState={selectedState} selectedXValue={selectedXValue}
+          selectedValue={selectedValue} setSelectedValue={setSelectedValue} />
         <DetailView />
       </div>
       <div className='otherview'>
