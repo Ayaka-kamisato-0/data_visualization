@@ -22,7 +22,7 @@
 .relativity{
   position: absolute;
   padding: 0px;
-  text-align: center;
+  text-align: left;
   left:700px;
   top:440px;
 }
@@ -30,8 +30,8 @@
   position: absolute;
   left:1200px;
   top:400px;
-  text-align: center;
+  text-align: left;
 }
 .assistView{
-  text-align: center;
+  text-align: left;
 }

@@ -117,7 +117,7 @@ const divStyle_As2={
         <br/>
         <br/>
         
-        <p>AssistView2</p>
+        <p>Scores over time</p>
         <br/>
         <br/>
         <br/>
