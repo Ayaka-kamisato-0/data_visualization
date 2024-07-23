@@ -4,6 +4,7 @@ import * as echarts from 'echarts';
 import { store } from '../store';
 
 var key;
+
 const data = [
     [
         [1, 1, "University of Oxford", "United Kingdom"],
@@ -1022,7 +1023,8 @@ const data = [
     ]
 ]
 export default function Overview({ selectedState, selectedXValue, selectedValue, setSelectedValue }) {
-
+    const [up, setUp] = useState(0);
+    const [down, setDown] = useState(0);
     useEffect(() => {
         var myChart = echarts.init(document.getElementById('chart'));
 
@@ -1316,7 +1318,8 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
             setSelectedValue(key);
         });
         const updateChart = (chart, value, type) => {
-
+            let upCount = 0;
+            let downCount = 0;
             var highlightData = [];
             myChart.setOption(option_0);
             if (type === 'xValue') {
@@ -1343,6 +1346,12 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                             // 打印调试信息，确保我们正确地找到数据点
                             // console.log('Highlight state:', data[seriesIndex][i]);
                             if (selectedValue[seriesIndex] == true) {
+                                if (data[seriesIndex][i][0] > data[seriesIndex][i][1]) {
+                                    upCount += 1;
+                                }
+                                else if (data[seriesIndex][i][0] < data[seriesIndex][i][1]) {
+                                    downCount += 1;
+                                }
                                 highlightData.push({
                                     seriesIndex: seriesIndex,
                                     dataIndex: i
@@ -1352,8 +1361,11 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     }
                 }
             }
+            setUp(upCount);
+            setDown(downCount);
 
-            // console.log('Highlight Data:', highlightData);
+            console.log('Up Down:', upCount, downCount);
+            console.log('Highlight Data:', highlightData);
 
             var highlight_series_idx = []
             var highlight_data_idx = []
@@ -1393,6 +1405,11 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
         height: '400px',
         backgroundColor: 'white'
     };
+    const _print = ({ val_1, val_2 }) => {
+        return <div>
+            <p>排名上升：<span className="rank-space">{val_1}所;</span>排名下降：{val_2}所;</p>
+        </div>
+    }
 
     return <div id="container">
         <br />
@@ -1400,6 +1417,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
         <p id="title">
             Overview: Ranking Variation after diminishing dimensions
         </p>
+        <_print val_1={up} val_2={down} />
         <div id="chart" style={{ width: '600px', height: '300px' }}></div>
     </div>
 
