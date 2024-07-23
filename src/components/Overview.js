@@ -1085,7 +1085,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
                     name: 'rank0',
                     data: data[0],
                     type: 'scatter',
-                    symbolSize: 1,
+                    symbolSize: 2,
                     emphasis: {
                         focus: 'self',
                         itemStyle: {
