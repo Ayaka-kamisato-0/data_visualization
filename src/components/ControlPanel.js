@@ -34,27 +34,6 @@ function ControlPanel({ selectedState, selectedXValue,selectedYValue, onStateCha
         <br></br>
         <p><strong>Control Panel</strong></p>
         <Button_Ant />
-        <p>Search by country/region</p>
-        <Select onChange={onStateChange} defaultValue="country/region">
-            <Select.Option value="China">China</Select.Option>
-            <Select.Option value="Japan">Japan</Select.Option>
-            <Select.Option value="South Korea">South Korea</Select.Option>
-            <Select.Option value="Singapore">Singapore</Select.Option>
-            <Select.Option value="United Kingdom">United Kingdom</Select.Option>
-            <Select.Option value="United States">United States</Select.Option>
-            <Select.Option value="Switzerland">Switzerland</Select.Option>
-            <Select.Option value="Germany">Germany</Select.Option>
-            <Select.Option value="France">France</Select.Option>
-            <Select.Option value="Hong Kong">China HongKong</Select.Option>
-            <Select.Option value="Australia">Australia</Select.Option>
-            <Select.Option value="Russia">Russia</Select.Option>
-            <Select.Option value="Belgium">Belgium</Select.Option>
-            <Select.Option value="Netherlands">Netherlands</Select.Option>
-            <Select.Option value="Taiwan">China Taiwan</Select.Option>
-            <Select.Option value="Sweden">Sweden</Select.Option>
-        </Select>
-        <br></br>
-
         <p>Search by University</p>
         <Select onChange={onXValueChange} defaultValue="University">
             <Select.Option value="University of Oxford">University of Oxford</Select.Option>
@@ -259,6 +238,27 @@ function ControlPanel({ selectedState, selectedXValue,selectedYValue, onStateCha
             <Select.Option value="Queensland University of Technology">Queensland University of Technology</Select.Option>
             <Select.Option value="Ulsan National Institute of Science and Technology (UNIST)">Ulsan National Institute of Science and Technology (UNIST)</Select.Option>
         </Select>
+
+        <p>Search by country/region</p>
+        <Select onChange={onStateChange} defaultValue="country/region">
+            <Select.Option value="China">China</Select.Option>
+            <Select.Option value="Japan">Japan</Select.Option>
+            <Select.Option value="South Korea">South Korea</Select.Option>
+            <Select.Option value="Singapore">Singapore</Select.Option>
+            <Select.Option value="United Kingdom">United Kingdom</Select.Option>
+            <Select.Option value="United States">United States</Select.Option>
+            <Select.Option value="Switzerland">Switzerland</Select.Option>
+            <Select.Option value="Germany">Germany</Select.Option>
+            <Select.Option value="France">France</Select.Option>
+            <Select.Option value="Hong Kong">China HongKong</Select.Option>
+            <Select.Option value="Australia">Australia</Select.Option>
+            <Select.Option value="Russia">Russia</Select.Option>
+            <Select.Option value="Belgium">Belgium</Select.Option>
+            <Select.Option value="Netherlands">Netherlands</Select.Option>
+            <Select.Option value="Taiwan">China Taiwan</Select.Option>
+            <Select.Option value="Sweden">Sweden</Select.Option>
+        </Select>
+        <br></br>
         <br></br>
         <br></br>
         <br></br>
