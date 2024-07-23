@@ -7,7 +7,7 @@ function AssistView2() {
     const {state, dispatch} = useContext(store);
 
     const getOption = () => {
-        const colors = ['#5470C6', 'brown', 'green','yellow','purple'];
+        const colors = ['blue','red', 'brown', 'green','yellow','purple'];
         return {
   color: colors,
   tooltip: {
@@ -27,7 +27,7 @@ function AssistView2() {
     }
   },
   legend: {
-    data: ['ranking(Avg)', 'teaching','research','citations','industry income','international outlook']
+    data: ['ranking', 'teaching','research','citations','industry income','international outlook',]
   },
   xAxis: [
     {
@@ -60,7 +60,7 @@ function AssistView2() {
       name: 'score',
       position: 'left',
       alignTicks: true,
-      offset: 30,
+      offset: 0,
       axisLine: {
         show: true,
         lineStyle: {
@@ -74,7 +74,7 @@ function AssistView2() {
   ],
   series: [
     {
-      name: 'rank',
+      name: 'ranking',
       type: 'bar',
       yAxisIndex:0,
       data: [
@@ -110,17 +110,20 @@ function AssistView2() {
   ]
 };}
 const divStyle_As2={
-    height:'300px',
+    height:'0px',
     width:'600px',
-    position:'left'
 }
     return <div style={divStyle_As2}>
         <br/>
         <br/>
+        
         <p>AssistView2</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <ReactEcharts option={getOption()} />
     </div>
-
 }
 
 export default AssistView2;

@@ -23,11 +23,15 @@
   position: absolute;
   padding: 0px;
   text-align: center;
-  left:600px;
+  left:700px;
   top:440px;
 }
 .assistView2{
   position: absolute;
-  left:1100px;
+  left:1200px;
   top:400px;
+  text-align: center;
+}
+.assistView{
+  text-align: center;
 }

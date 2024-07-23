@@ -8,9 +8,9 @@ import IndustryIncome from './assets/IndustryIncome.png'
 import InternationalOutlook from './assets/InternationalOutlook.png'
 
 function Relativity({ selectedYValue }) {
-let val=research;
-if(selectedYValue==='teaching'){
-    val=teaching;
+let val=teaching;
+if(selectedYValue==='research'){
+    val=research;
 }
 if(selectedYValue==='citations'){
     val=citations;

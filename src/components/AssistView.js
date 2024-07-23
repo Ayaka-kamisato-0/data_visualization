@@ -18,11 +18,11 @@ export default function AssistView({ selectedState }) {
       },
       radar: {
         indicator: [
-          { name: 'scores_teaching', max: 100 },
-          { name: 'socres_research', max: 100 },
-          { name: 'scores_citation', max: 100 },
-          { name: 'socres_industry_income', max: 100 },
-          { name: 'scores_international_outlook', max: 100 }
+          { name: 'teaching', max: 100 },
+          { name: 'research', max: 100 },
+          { name: 'citation', max: 100 },
+          { name: 'industry_income', max: 100 },
+          { name: 'international_outlook', max: 100 }
         ]
       },
       series: [
@@ -155,7 +155,7 @@ export default function AssistView({ selectedState }) {
       <br />
       <div>AssistView</div>
       <br />
-      <div id="chart_2" style={{ height: '400px', width: '400px' }}></div>
+      <div id="chart_2" style={{ height: '400px', width: '500px' }}></div>
     </div>
   );
 }
