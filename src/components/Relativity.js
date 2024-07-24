@@ -22,6 +22,7 @@ if(selectedYValue==='InternationalOutlook'){
     val=InternationalOutlook;
 }
     return <div>
+        <br/>
         <p>Cluster Diagram</p>
         <img src={val} height='400px' width='500px' alt='picture'/>
     </div>

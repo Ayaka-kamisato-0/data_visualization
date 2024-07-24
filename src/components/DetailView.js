@@ -348,8 +348,9 @@ export default function DetailView({ selectedXValue }) {
     <br></br>
     <br></br>
     <br></br>
-    <div>DetailView</div>
+    <div>DetailView:scores of each category</div>
     <br></br>
+    <br/>
     <div id="chart_1" style={{ width: '600px', height: '285px' }}></div>
   </div>
 }

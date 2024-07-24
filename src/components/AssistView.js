@@ -152,8 +152,7 @@ export default function AssistView({ selectedState }) {
     <div style={divStyle_As}>
       <br />
       <br />
-      <br />
-      <div>AssistView</div>
+      <div>AssistView:Regional differences in scores</div>
       <br />
       <div id="chart_2" style={{ height: '400px', width: '500px' }}></div>
     </div>

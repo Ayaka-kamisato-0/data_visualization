@@ -1407,7 +1407,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
     };
     const _print = ({ val_1, val_2 }) => {
         return <div>
-            <p>排名上升：<span className="rank-space">{val_1}所;</span>排名下降：{val_2}所;</p>
+            <p>rise:<span className="rank-space">{val_1};   </span>fall:{val_2};</p>
         </div>
     }
 

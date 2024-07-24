@@ -19,7 +19,8 @@ code {
   width: 100%;
   overflow: hidden;
   background-color: #333;
-  z-index: 500
+  z-index: 500;
+  display: flex;
 }
 .navbar a {
   float: left;
@@ -35,4 +36,10 @@ code {
   color: black;
 }
 
-
+.appname{
+  position:absolute;
+  left: 1200px;
+  font-size: large;
+  text-align: right;
+  display: flex;
+}

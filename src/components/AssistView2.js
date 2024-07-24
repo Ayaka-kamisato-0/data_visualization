@@ -116,7 +116,7 @@ const divStyle_As2={
     return <div style={divStyle_As2}>
         <br/>
         <br/>
-        
+        <br/>
         <p>Scores over time</p>
         <br/>
         <br/>
