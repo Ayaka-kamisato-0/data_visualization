@@ -4,7 +4,8 @@ import * as echarts from 'echarts';
 import { store } from '../store';
 
 var key;
-
+var prev_state = '';
+var prev_x = 0;
 const data = [
     [
         [1, 1, "University of Oxford", "United Kingdom"],
@@ -1364,7 +1365,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
             setUp(upCount);
             setDown(downCount);
 
-            console.log('Up Down:', upCount, downCount);
+            // console.log('Up Down:', upCount, downCount);
             console.log('Highlight Data:', highlightData);
 
             var highlight_series_idx = []
@@ -1387,11 +1388,17 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
 
         };
         if (selectedXValue !== null) {
-            updateChart(myChart, selectedXValue, 'xValue');
+            if (selectedXValue !== prev_x) {
+                updateChart(myChart, selectedXValue, 'xValue');
+                prev_x = selectedXValue;
+            }
         }
 
-        if (selectedState) {
-            updateChart(myChart, selectedState, 'state');
+        if (selectedState !== null) {
+            if (selectedState !== prev_state) {
+                updateChart(myChart, selectedState, 'state');
+                prev_state = selectedState;
+            }
         }
 
         // 清理函数

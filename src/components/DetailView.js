@@ -291,7 +291,7 @@ export default function DetailView({ selectedXValue }) {
     myChart_1.setOption(option);
     console.log('selectedXValue:', selectedXValue);
     var x_value = universityMapping[selectedXValue];
-    console.log('x_value:', x_value);
+    // console.log('x_value:', x_value);
 
     if (selectedXValue) {
       const xValueIndex = Object.keys(universityMapping).indexOf(selectedXValue);
