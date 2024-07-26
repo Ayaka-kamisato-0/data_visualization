@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
-import * as echarts from 'echarts';
-import { universityMapping } from './universityMapping'; // 将映射关系单独存放一个文件，方便管理
-
+//nothing here ignore this file
 const data = [
-  // 省略数据部分
+  // 
 ];
 
 export default function DetailView({ selectedXValue }) {

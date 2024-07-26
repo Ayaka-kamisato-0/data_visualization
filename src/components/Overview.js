@@ -1027,6 +1027,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
     const [up, setUp] = useState(0);
     const [down, setDown] = useState(0);
     useEffect(() => {
+
         var myChart = echarts.init(document.getElementById('chart'));
 
         var option_0 = {
@@ -1318,6 +1319,7 @@ export default function Overview({ selectedState, selectedXValue, selectedValue,
             // console.log('values:', key);
             setSelectedValue(key);
         });
+        myChart.setOption(option_0);
         const updateChart = (chart, value, type) => {
             let upCount = 0;
             let downCount = 0;
